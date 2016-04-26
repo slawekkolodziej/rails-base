@@ -5,6 +5,6 @@ This rails image uses:
 - git
 - imagemagick
 - libpq-dev for postgres
-- 
+
 Application will be placed in the /app directory
 
