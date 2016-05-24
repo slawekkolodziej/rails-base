@@ -22,3 +22,7 @@ RUN apt-get clean -y
 RUN apt-get autoclean -y
 RUN apt-get autoremove -y
 RUN rm -rf /var/lib/apt/lists/*
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
