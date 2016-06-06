@@ -5,7 +5,7 @@ MAINTAINER Slawek Kolodziej <hfrntt@gmail.com>
 RUN apt-get update; apt-get install --fix-missing --no-install-recommends -qq -y \
 	build-essential \
 	git \
-	libpq-dev \
+	mysql-client \
 	imagemagick \
 	cron \
 	supervisor
