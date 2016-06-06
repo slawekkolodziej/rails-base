@@ -6,6 +6,7 @@ RUN apt-get update; apt-get install --fix-missing --no-install-recommends -qq -y
 	build-essential \
 	git \
 	mysql-client \
+	libmysqlclient-dev \
 	imagemagick \
 	cron \
 	supervisor
