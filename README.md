@@ -5,8 +5,7 @@ This rails image uses:
 - imagemagick
 - cron
 - supervisor
-- libpq-dev
-
+- libpq-dev (mysql-client and libmysqlclient-dev in mysql version)
 
 Application will be placed in the /app directory
 
