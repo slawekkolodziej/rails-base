@@ -1,16 +1,16 @@
-FROM ruby:2.1-slim
+FROM ruby:2.4.1-slim
 
 MAINTAINER Slawek Kolodziej <hfrntt@gmail.com>
 
 RUN apt-get update; apt-get install --fix-missing --no-install-recommends -qq -y \
-	build-essential \
-	git \
-	libpq-dev \
-	imagemagick \
-	cron \
-	supervisor \
-	libopencv-dev \
-	opencv-data
+  build-essential \
+  git \
+  libpq-dev \
+  imagemagick \
+  cron \
+  supervisor \
+  libopencv-dev \
+  opencv-data
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 RUN mkdir -p /var/log/supervisor
