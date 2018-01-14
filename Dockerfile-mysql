@@ -9,10 +9,14 @@ RUN apt-get update; apt-get install --fix-missing --no-install-recommends -qq -y
   libmysqlclient-dev \
   imagemagick \
   cron \
-  supervisor
+  supervisor \
+  curl
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 RUN mkdir -p /var/log/supervisor
+
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - ; \
+  apt-get install -y nodejs
 
 ENV APP_HOME /app
 RUN mkdir $APP_HOME
