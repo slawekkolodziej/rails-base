@@ -1,19 +1,23 @@
-FROM ruby:2.1-slim
+FROM ruby:2.4-slim-stretch
 
 MAINTAINER Slawek Kolodziej <hfrntt@gmail.com>
 
 RUN apt-get update; apt-get install --fix-missing --no-install-recommends -qq -y \
-	build-essential \
-	git \
-	libpq-dev \
-	imagemagick \
-	cron \
-	supervisor \
-	libopencv-dev \
-	opencv-data
+  build-essential \
+  cron \
+  curl \
+  git \
+  imagemagick \
+  libopencv-dev \
+  libpq-dev \
+  opencv-data \
+  supervisor
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 RUN mkdir -p /var/log/supervisor
+
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - ; \
+  apt-get install -y nodejs
 
 ENV APP_HOME /app
 RUN mkdir $APP_HOME

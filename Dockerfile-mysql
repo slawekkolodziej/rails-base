@@ -1,18 +1,22 @@
-FROM ruby:2.1-slim
+FROM ruby:2.4-slim-stretch
 
 MAINTAINER Slawek Kolodziej <hfrntt@gmail.com>
 
 RUN apt-get update; apt-get install --fix-missing --no-install-recommends -qq -y \
-	build-essential \
-	git \
-	mysql-client \
-	libmysqlclient-dev \
-	imagemagick \
-	cron \
-	supervisor
+  build-essential \
+  cron \
+  curl \
+  git \
+  imagemagick \
+  libmysqlclient-dev \
+  mysql-client \
+  supervisor
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 RUN mkdir -p /var/log/supervisor
+
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - ; \
+  apt-get install -y nodejs
 
 ENV APP_HOME /app
 RUN mkdir $APP_HOME
