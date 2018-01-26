@@ -8,7 +8,9 @@ RUN apt-get update; apt-get install --fix-missing --no-install-recommends -qq -y
   curl \
   git \
   imagemagick \
+  libopencv-dev \
   libpq-dev \
+  opencv-data \
   supervisor
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
