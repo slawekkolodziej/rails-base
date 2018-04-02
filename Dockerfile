@@ -1,4 +1,4 @@
-FROM ruby:2.4-slim-stretch
+FROM ruby:2.4.3-slim-stretch
 
 MAINTAINER Slawek Kolodziej <hfrntt@gmail.com>
 
@@ -16,8 +16,11 @@ RUN apt-get update; apt-get install --fix-missing --no-install-recommends -qq -y
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 RUN mkdir -p /var/log/supervisor
 
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - ; \
-  apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - ; \
+  apt-get install -y nodejs \
+  npm install -g yarn
+
+RUN gem install --no-ri --no-rdoc bundler foreman
 
 ENV APP_HOME /app
 RUN mkdir $APP_HOME
