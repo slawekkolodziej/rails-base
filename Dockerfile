@@ -1,4 +1,4 @@
-FROM ruby:2.4.3-slim-stretch
+FROM ruby:2.3.6-slim-stretch
 
 MAINTAINER Slawek Kolodziej <hfrntt@gmail.com>
 

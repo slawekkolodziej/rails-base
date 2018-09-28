@@ -5,7 +5,7 @@ Base ruby image for rails applications. It contains:
 - git
 - imagemagick
 - opencv
-- ruby 2.4
+- ruby 2.3.6
 - supervisor
 
 And depending on version:
