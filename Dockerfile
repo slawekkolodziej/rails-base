@@ -10,6 +10,10 @@ RUN apt-get update; apt-get install --fix-missing --no-install-recommends -qq -y
   git \
   gnupg2 \
   imagemagick \
+  libgraphicsmagick1-dev \
+  libmagickcore-6.q16-3 \
+  libmagickcore-6.q16-3-extra \
+  libmagickcore-dev \
   libopencv-dev \
   libpq-dev \
   opencv-data \
